@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="5dp"
+        android:onClick="onClick"
+        android:text="Search"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.916"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView3"
+        app:layout_constraintVertical_bias="0.992" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:onClick="textClick"
+        android:text="Enter postcode or name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="130dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TableLayout
+            android:id="@+id/table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="507dp"
+            android:scrollbars="vertical">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </TableLayout>
+    </ScrollView>
+
+    <com.mapbox.mapboxsdk.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="150dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/mapButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="map"
+        android:onClick="mapClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.992" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.963">
+
+        <RadioButton
+            android:id="@+id/postcodeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Search by Postcode"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="612dp" />
+
+        <RadioButton
+            android:id="@+id/locationButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search by Location"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="644dp" />
+
+        <RadioButton
+            android:id="@+id/placeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search by Name" />
+
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
